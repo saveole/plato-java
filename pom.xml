@@ -5,6 +5,7 @@
     <packaging>pom</packaging>
     <modules>
         <module>protobuf-samples</module>
+        <module>spring-grpc-samples</module>
     </modules>
     <groupId>org.plato</groupId>
     <artifactId>plato-java</artifactId>
@@ -19,6 +20,8 @@
         <protobuf-maven-plugin.version>3.4.0</protobuf-maven-plugin.version>
         <jacoco.version>0.8.12</jacoco.version>
         <protobuf.version>4.31.1</protobuf.version>
+        <grpc.version>1.73.0</grpc.version>
+        <protobuf-java-util.version>4.31.1</protobuf-java-util.version>
     </properties>
 
     <dependencyManagement>
@@ -37,6 +40,35 @@
                 <groupId>com.google.protobuf</groupId>
                 <artifactId>protobuf-java</artifactId>
                 <version>${protobuf.version}</version>
+            </dependency>
+
+            <!-- https://mvnrepository.com/artifact/io.grpc/grpc-protobuf -->
+            <dependency>
+                <groupId>io.grpc</groupId>
+                <artifactId>grpc-protobuf</artifactId>
+                <version>${grpc.version}</version>
+            </dependency>
+
+            <!-- https://mvnrepository.com/artifact/io.grpc/grpc-stub -->
+            <dependency>
+                <groupId>io.grpc</groupId>
+                <artifactId>grpc-stub</artifactId>
+                <version>${grpc.version}</version>
+            </dependency>
+
+            <!-- https://mvnrepository.com/artifact/io.grpc/grpc-netty-shaded -->
+            <!-- 提供了基于 Netty 的 gRPC 服务器和客户端实现，并且打包了 Netty 依赖，可以避免版本冲突。 -->
+            <dependency>
+                <groupId>io.grpc</groupId>
+                <artifactId>grpc-netty-shaded</artifactId>
+                <version>${grpc.version}</version>
+            </dependency>
+
+            <!-- https://mvnrepository.com/artifact/com.google.protobuf/protobuf-java-util -->
+            <dependency>
+                <groupId>com.google.protobuf</groupId>
+                <artifactId>protobuf-java-util</artifactId>
+                <version>${protobuf-java-util.version}</version>
             </dependency>
 
         </dependencies>
