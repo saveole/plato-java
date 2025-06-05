@@ -1,0 +1,29 @@
+syntax = "proto3";
+package org.saveole.grpc.greeting;
+
+option java_multiple_files = true;
+option java_package = "org.saveole.grpc.greeting";
+option java_outer_classname = "GreetingServiceProto";
+
+message HelloRequest {
+  string name = 1;
+}
+
+message HelloReply {
+  string message = 1;
+}
+
+// 定义服务接口
+service GreetingService {
+    // 定义一个 RPC 方法（一元 RPC）
+    rpc SayHello (HelloRequest) returns (HelloReply);
+
+    // 示例：服务端流式 RPC
+    // rpc SayHelloStream (HelloRequest) returns (stream HelloResponse);
+
+    // 示例：客户端流式 RPC
+    // rpc SayHelloClientStream (stream HelloRequest) returns (HelloResponse);
+
+    // 示例：双向流式 RPC
+    // rpc SayHelloBidirectionalStream (stream HelloRequest) returns (stream HelloResponse);
+}

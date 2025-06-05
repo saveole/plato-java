@@ -1,0 +1,36 @@
+syntax = "proto3";
+package org.saveole.grpc.user;
+
+option java_multiple_files = true;
+option java_package = "org.saveole.grpc.user";
+option java_outer_classname = "UserServiceProto";
+
+message User {
+    string id = 1;
+    string name = 2;
+    string email = 3;
+    repeated string phone_numbers = 4;
+}
+
+message GetUserRequest {
+    string id = 1;
+}
+
+message GetUserResponse {
+    User user = 1;
+}
+
+// 定义服务接口
+service UserService {
+    // 定义一个 RPC 方法（一元 RPC）
+    rpc GetUser (GetUserRequest) returns (GetUserResponse);
+
+    // 示例：服务端流式 RPC
+    // rpc SayHelloStream (HelloRequest) returns (stream HelloResponse);
+
+    // 示例：客户端流式 RPC
+    // rpc SayHelloClientStream (stream HelloRequest) returns (HelloResponse);
+
+    // 示例：双向流式 RPC
+    // rpc SayHelloBidirectionalStream (stream HelloRequest) returns (stream HelloResponse);
+}

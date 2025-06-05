@@ -7,15 +7,15 @@
         <groupId>org.plato</groupId>
         <artifactId>plato-java</artifactId>
         <version>0.0.1-SNAPSHOT</version>
+        <relativePath>../../pom.xml</relativePath>
     </parent>
 
-    <artifactId>protobuf-samples</artifactId>
+    <artifactId>grpc-api</artifactId>
 
     <properties>
         <maven.compiler.source>21</maven.compiler.source>
         <maven.compiler.target>21</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <grpc.version>1.73.0</grpc.version>
     </properties>
 
     <dependencies>
@@ -31,6 +31,11 @@
 
         <dependency>
             <groupId>io.grpc</groupId>
+            <artifactId>grpc-core</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>io.grpc</groupId>
             <artifactId>grpc-stub</artifactId>
         </dependency>
 
@@ -39,10 +44,6 @@
             <artifactId>grpc-netty-shaded</artifactId>
         </dependency>
 
-        <dependency>
-            <groupId>com.google.protobuf</groupId>
-            <artifactId>protobuf-java-util</artifactId>
-        </dependency>
     </dependencies>
 
     <build>
@@ -65,4 +66,5 @@
             </plugin>
         </plugins>
     </build>
+
 </project>

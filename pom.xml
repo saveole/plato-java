@@ -42,6 +42,13 @@
                 <version>${protobuf.version}</version>
             </dependency>
 
+            <!-- https://mvnrepository.com/artifact/io.grpc/grpc-core -->
+            <dependency>
+                <groupId>io.grpc</groupId>
+                <artifactId>grpc-core</artifactId>
+                <version>${grpc.version}</version>
+            </dependency>
+
             <!-- https://mvnrepository.com/artifact/io.grpc/grpc-protobuf -->
             <dependency>
                 <groupId>io.grpc</groupId>
