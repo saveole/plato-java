@@ -1,0 +1,2 @@
+1. 先编写 .proto 文件，在结合 [protobuf-maven-plugin](https://github.com/ascopes/protobuf-maven-plugin) 生成对应的 java 源文件
+2. 使用 [mvn protobuf:generate](https://ascopes.github.io/protobuf-maven-plugin/basic-usage.html)
