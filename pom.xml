@@ -22,6 +22,7 @@
         <protobuf.version>4.31.1</protobuf.version>
         <grpc.version>1.73.0</grpc.version>
         <protobuf-java-util.version>4.31.1</protobuf-java-util.version>
+        <spring-boot.version>3.5.0</spring-boot.version>
     </properties>
 
     <dependencyManagement>
@@ -35,40 +36,27 @@
                 <scope>import</scope>
             </dependency>
 
+            <dependency>
+                <groupId>io.grpc</groupId>
+                <artifactId>grpc-bom</artifactId>
+                <version>${grpc.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>${spring-boot.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
             <!-- https://mvnrepository.com/artifact/com.google.protobuf/protobuf-java -->
             <dependency>
                 <groupId>com.google.protobuf</groupId>
                 <artifactId>protobuf-java</artifactId>
                 <version>${protobuf.version}</version>
-            </dependency>
-
-            <!-- https://mvnrepository.com/artifact/io.grpc/grpc-core -->
-            <dependency>
-                <groupId>io.grpc</groupId>
-                <artifactId>grpc-core</artifactId>
-                <version>${grpc.version}</version>
-            </dependency>
-
-            <!-- https://mvnrepository.com/artifact/io.grpc/grpc-protobuf -->
-            <dependency>
-                <groupId>io.grpc</groupId>
-                <artifactId>grpc-protobuf</artifactId>
-                <version>${grpc.version}</version>
-            </dependency>
-
-            <!-- https://mvnrepository.com/artifact/io.grpc/grpc-stub -->
-            <dependency>
-                <groupId>io.grpc</groupId>
-                <artifactId>grpc-stub</artifactId>
-                <version>${grpc.version}</version>
-            </dependency>
-
-            <!-- https://mvnrepository.com/artifact/io.grpc/grpc-netty-shaded -->
-            <!-- 提供了基于 Netty 的 gRPC 服务器和客户端实现，并且打包了 Netty 依赖，可以避免版本冲突。 -->
-            <dependency>
-                <groupId>io.grpc</groupId>
-                <artifactId>grpc-netty-shaded</artifactId>
-                <version>${grpc.version}</version>
             </dependency>
 
             <!-- https://mvnrepository.com/artifact/com.google.protobuf/protobuf-java-util -->

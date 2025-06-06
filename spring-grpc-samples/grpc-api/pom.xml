@@ -39,6 +39,7 @@
             <artifactId>grpc-stub</artifactId>
         </dependency>
 
+        <!-- 提供了基于 Netty 的 gRPC 服务器和客户端实现，并且打包了 Netty 依赖，可以避免版本冲突。 -->
         <dependency>
             <groupId>io.grpc</groupId>
             <artifactId>grpc-netty-shaded</artifactId>
